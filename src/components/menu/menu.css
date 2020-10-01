@@ -1,0 +1,140 @@
+/* ========================
+  main
+======================== */
+
+.menu {
+  position: absolute;
+  bottom: 5vw;
+  left: 5vw;
+  width: 20vw;
+  height: 20vw;
+  z-index: 9;
+  user-select: none;
+}
+
+.current-tab-title {
+  position: absolute;
+  left: calc(50% - 2.5vw);
+  top: calc(50% - 2.5vw);
+  width: 5vw;
+  height: 5vw;
+  font-size: 1.5vw;
+  line-height: 5vw;
+  text-align: center;
+  border-radius: 5vw;
+  background: #fff;
+  box-shadow: 0 0 2vw #4a4a4a;
+}
+
+.circle-menu {
+  position: absolute;
+  left: calc(50% - 2.5vw);
+  top: calc(50% - 2.5vw);
+  width: 5vw;
+  height: 5vw;
+  border-radius: 5vw;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.menu-link {
+  position: absolute;
+  top: calc(50% - 2vw);
+  left: calc(50% - 2vw);
+  width: 4vw;
+  height: 4vw;
+  background: #fff;
+  border-radius: 5vw;
+  box-shadow: 0 0 1.5vw #4a4a4a;
+  cursor: pointer;
+  transform: translate(0vw, 0vw) scale(0);
+  transition: transform .2s;
+}
+
+.menu__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1vw;
+  line-height: 1vw;
+}
+
+
+/*
+  animation moving
+======================== */
+
+.circle-menu.active {
+  animation: rotateMenu 1.5s ease;
+}
+
+.circle-menu.active .menu-link-0 {
+  transform: translate(7vw, 0vw) scale(1);
+}
+
+.circle-menu.active .menu-link-1 {
+  transform: translate(3.5vw, 6vw) scale(1);
+}
+
+.circle-menu.active .menu-link-2 {
+  transform: translate(-3.5vw, 6vw) scale(1);
+}
+
+.circle-menu.active .menu-link-3 {
+  transform: translate(-7vw, 0vw) scale(1);
+}
+
+.circle-menu.active .menu-link-4 {
+  transform: translate(-3.5vw, -6vw) scale(1);
+}
+
+.circle-menu .menu-link-0 {
+  transition-delay: .0s;
+}
+
+.circle-menu .menu-link-1 {
+  transition-delay: .2s;
+}
+
+.circle-menu .menu-link-2 {
+  transition-delay: .4s;
+}
+
+.circle-menu .menu-link-3 {
+  transition-delay: .6s;
+}
+
+.circle-menu .menu-link-4 {
+  transition-delay: .8s;
+}
+
+
+/* ========================
+  animation
+======================== */
+
+@keyframes rotateMenu {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(-360deg)
+  }
+}
+
+
+
+
+/* ========================
+  adaptive
+======================== */
+
+
+/* .menu {
+  transform: scale(3);
+  left: calc(50% - 10vw);
+  bottom: 20vw;
+} */
